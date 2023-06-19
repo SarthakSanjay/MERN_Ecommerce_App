@@ -1,0 +1,28 @@
+.home{
+    height: 90vh;
+    width: 100vw;
+    border :1px solid black;
+    display: flex;
+}
+
+.filter{
+    height: 100%;
+    background-color: rgb(229, 206, 251);
+    width: 20vw;
+}
+
+.products{
+    min-height: 100%;
+    width: 80vw;
+    background-color: rgb(247, 209, 209);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pro-items{
+    width: 150px;
+    height: 200px;
+    background-color: darkmagenta;
+    margin: 10px;
+
+}
