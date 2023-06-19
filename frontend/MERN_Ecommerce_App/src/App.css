@@ -10,7 +10,10 @@
     background-color: rgb(229, 206, 251);
     width: 20vw;
 }
-
+.filter ul{
+    display: flex;
+    flex-direction: column;
+}
 .products{
     min-height: 100%;
     width: 80vw;
