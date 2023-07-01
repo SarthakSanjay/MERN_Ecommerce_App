@@ -1,13 +1,18 @@
-import ProductItems from "./ProductItems"
-const arr = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+import { Route, Routes } from "react-router-dom"
+
+import Add from "./Add"
+import All from "./All"
+
 
 const Products = () => {
   return (
     <div className="products">
     
-    {arr.map((items)=>{
-        return <ProductItems /> 
-    })}
+   
+    <Routes>
+    <Route path="/all" element={<All />} />
+        <Route path="/addProducts" element={<Add />} />
+      </Routes>
     </div>
   )
 }
