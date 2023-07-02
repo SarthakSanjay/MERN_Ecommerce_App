@@ -7,7 +7,9 @@ const Add = () => {
     color:'#ec4c56',
     display:'flex',
     'flex-direction':'column',
-    padding:'200px 300px',
+    // padding:'200px 300px',
+    justifyContent:'center',
+    alignItems:'center',
     'background-color':"#242933"
   }
 
@@ -34,7 +36,7 @@ const Add = () => {
 
     </div>
 
-        <input type="submit" value="Add product" />
+        <input type="submit" value="Add product" style={{height:'30px' , width:'150px' ,backgroundColor:'#ec4c56' ,color:"#000", border:'none', fontSize:"24px" , margin:'10px auto',borderRadius:'10px',cursor:'pointer'}} />
     </form>
   )
 }

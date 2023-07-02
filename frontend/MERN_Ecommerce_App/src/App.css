@@ -16,10 +16,23 @@
     height: 100%;
     background-color: #596172;
     width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .filter ul{
+   /* margin: 0 auto; */
+   height: 200px;
+   width: 100%;
     display: flex;
     flex-direction: column;
+}
+.list{
+    margin: 0 auto;
+}
+Link{
+    margin: 0 auto;
+
 }
 .products{
     min-height: 100%;

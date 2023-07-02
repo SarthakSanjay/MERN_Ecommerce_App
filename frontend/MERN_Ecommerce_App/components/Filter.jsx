@@ -3,17 +3,21 @@ const Filter = () => {
   return (
     <div className="filter">
       <ul>
+        <li className='list'>
         <Link to='/all'>
-        <li>ALL</li>
-
+        ALL
         </Link>
-        <li>Electronics</li>
-        <li>Food</li>
-        <li>Gym</li>
+        </li>
+
+        <li className='list'>Electronics</li>
+        <li className='list'>Food</li>
+        <li className='list'>Gym</li>
+        <li className='list'>
         <Link to="/addProducts">
-        <li>Add</li>
-
+        Add
         </Link>
+        </li>
+
         
         
       </ul>
