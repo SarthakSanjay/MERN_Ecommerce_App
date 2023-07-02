@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-
+import '../src/App.css'
 import Add from "./Add"
 import All from "./All"
 

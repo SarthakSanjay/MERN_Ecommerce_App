@@ -2,7 +2,7 @@
 const Navbar = () => {
   return (
     <nav id="navbar">
-        <div id="logo">LOGO</div>
+        <div id="logo">MERN ECOMMERCE APP</div>
         <ul>
             <li>register</li>
             <li>login</li>
