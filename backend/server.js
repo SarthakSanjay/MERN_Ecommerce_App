@@ -7,7 +7,10 @@ const Product_router = require('./routes/product')
 
 app.use('/product',Product_router)
 
-
+app.post('/addProducts',(req,res) =>{
+    console.log(req.body)
+    res.send('success')
+})
 
 const start =  async() =>{
     try {
