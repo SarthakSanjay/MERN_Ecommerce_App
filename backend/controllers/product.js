@@ -20,6 +20,10 @@ const getSpecificProduct = async(req,res) => {
     res.json(product);
   }
 const createProduct = async( req,res) => {
+  let productName = "sample product"
+  let  price = 1200
+  let companyName = "Apple"
+  let rating = 4.5
     const product = PRODUCT.create({
         productName: productName ,
         price: price,
@@ -31,10 +35,36 @@ const createProduct = async( req,res) => {
     }
     res.json(product)
 }
-const updateProduct = async(req,res) =>{
+const updateProduct = async (req, res) => {
+  try {
+    // Find the product by ID
+    let product = await PRODUCT.findById(req.params.id);
 
-}
+    // Check if the product exists
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        msg: "Product not found"
+      });
+    }
+    product = await PRODUCT.findByIdAndUpdate(req.params.id, req.body,{
+      new:true,
+      runValidators:true,
+      useFindAndModify:false
+    })
+    res.status(200).json({
+      success: true,
+      product: product
+    });
+  } catch (error) {
+    console.error("Error updating product:", error);
+    res.status(500).json({
+      success: false,
+      msg: "Internal server error"
+    });
+  }
+};
 const deleteProduct = async(req,res) =>{
     
 }
-module.exports = getAllProducts
+module.exports ={ getAllProducts,createProduct,updateProduct,deleteProduct}
