@@ -1,5 +1,9 @@
 
-const cartDetails = async() =>{
+const cartDetails = async(req,res) =>{
+    if(!cartItems){
+        return res.status(404).json({msg: 'no items' ,total: cartItems.length})
+    }
+    
 
 }
 const addProductToCart = async(req,res) =>{
