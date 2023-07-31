@@ -1,15 +1,49 @@
-import ProductItems from "./ProductItems"
-import '../src/App.css'
-const arr = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+import React, { useState, useEffect } from 'react';
+import ProductItems from './ProductItems';
+import '../src/App.css';
+// import { log } from 'console';
+
 const All = () => {
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+ 
+  useEffect(() => {
+    const fetchData = async () => {
+      
+         await fetch('http://localhost:3000/product')
+         .then((response) => response.json()) // Parse the JSON response manually
+         .then((data) => {
+         setData(data.data);
+         setLoading(false);
+         console.log(data.data)
+         })
+       .catch((error) => {
+        console.error('Error fetching products:', error);
+        setLoading(false);
+      });
+    }
+    fetchData();
+  }, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
-     {arr.map((items)=>{
-        return <ProductItems /> 
-    })}
-    </>
-    
-  )
-}
+      {data.map((product) => {
+        console.log(product)
+        let {_id,productName , price, companyName , rating,image} = product
+        return <ProductItems
+        key={_id}
+        productName={productName}
+        price={price}
+        companyName={companyName}
+        rating={rating}
+        image={image}
 
-export default All
+        />
+       })}
+    </>
+  );
+};
+
+export default All;
